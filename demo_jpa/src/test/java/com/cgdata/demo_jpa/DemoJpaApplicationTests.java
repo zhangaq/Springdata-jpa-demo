@@ -30,7 +30,7 @@ class DemoJpaApplicationTests {
     @Test
     public void testSave(){
         TbName tbName = new TbName();
-//        tbName.setId(3l);
+//        tbName.setId(3l);//用于测试自增id
         tbName.setT1("130");
         tbName.setT2("3");
         tbName.setT3("1");
