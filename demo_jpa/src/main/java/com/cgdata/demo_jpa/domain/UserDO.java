@@ -21,6 +21,10 @@ public class UserDO {
     private Integer sex;
     @Column(name="last_login_time")
     private Date lastLoginTime;
+    @Column(name="create_time")
+    private Date createtime;
+    @Column(name="update_time")
+    private Date updatetime;
 
 
 }

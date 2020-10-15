@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -43,6 +45,16 @@ class DemoJpaApplicationTests {
         for (UserDO user : list) {
             System.out.println("user_name:" + user.getUserName());
         }
+    }
+
+    @Test
+    public void testSave1(){
+        UserDO userDO = new UserDO();
+        userDO.setUserName("张三");
+        userDO.setSex(12);
+        userDO.setPassword("123456");
+        userDO.setCreatetime(Calendar.getInstance().getTime());
+        userRepository.save(userDO);
     }
 
 
