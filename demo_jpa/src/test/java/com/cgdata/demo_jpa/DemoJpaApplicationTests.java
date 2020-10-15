@@ -33,7 +33,7 @@ class DemoJpaApplicationTests {
     public void testSave(){
         TbName tbName = new TbName();
 //        tbName.setId(3l);//用于测试自增id
-        tbName.setT1("130");
+        tbName.setT1("张三");
         tbName.setT2("3");
         tbName.setT3("1");
         tbNameRepository.save(tbName);
@@ -50,7 +50,7 @@ class DemoJpaApplicationTests {
     @Test
     public void testSave1(){
         UserDO userDO = new UserDO();
-        userDO.setUserName("张三");
+        userDO.setUserName("auto");
         userDO.setSex(12);
         userDO.setPassword("123456");
         userDO.setCreatetime(Calendar.getInstance().getTime());
