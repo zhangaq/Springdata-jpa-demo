@@ -50,7 +50,7 @@ class DemoJpaApplicationTests {
     @Test
     public void testSave1(){
         UserDO userDO = new UserDO();
-        userDO.setUserName("auto");
+        userDO.setUserName("网二");
         userDO.setSex(12);
         userDO.setPassword("123456");
         userDO.setCreatetime(Calendar.getInstance().getTime());
