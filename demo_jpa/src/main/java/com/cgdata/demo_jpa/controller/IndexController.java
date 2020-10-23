@@ -44,6 +44,14 @@ public class IndexController {
         return "views/index";
     }
 
+    @ResponseBody
+    @GetMapping(value = "query/{id}")
+    public Object queryById(@PathVariable long id){
+        TbName tbName = tbNameRepository.queryById(id);
+        return tbName;
+
+    }
+
 
 
 }

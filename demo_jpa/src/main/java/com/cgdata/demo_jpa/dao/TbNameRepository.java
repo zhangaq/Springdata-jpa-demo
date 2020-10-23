@@ -11,10 +11,10 @@ import java.util.List;
 @Repository
 public interface TbNameRepository extends JpaRepository<TbName,Long> {
 
-    @Query(value = "select id,t1,t2,t3,create_time,update_time from Users where id = ? ", nativeQuery = true)
-    List<TbName> queryById(String id);
+    @Query(value = "select id,t1,t2,t3,create_time,update_time from tb_name where id = ?1 ", nativeQuery = true)
+    TbName queryById(long id);
 
-    @Query(value = " update tb_name set t1 = ? where id = ? ", nativeQuery = true)
+    @Query(value = " update tb_name set t1 = ?1 where id = ?2 ", nativeQuery = true)
     @Modifying
     void updateT1ById(String t1,Integer id);
 
