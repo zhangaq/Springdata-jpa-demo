@@ -15,7 +15,7 @@ public interface TbNameRepository extends JpaRepository<TbName,Long> {
     TbName queryById(long id);
 
     @Query(value = " update tb_name set t1 = ?1 where id = ?2 ", nativeQuery = true)
-    @Modifying
+    @Modifying//
     void updateT1ById(String t1,Integer id);
 
 }
