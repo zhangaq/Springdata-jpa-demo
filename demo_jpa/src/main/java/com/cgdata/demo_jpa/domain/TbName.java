@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @Description  
@@ -26,6 +27,12 @@ public class TbName  implements Serializable {
 
    	@Column(name = "t3")
 	private String t3;
+
+   	@Column(name = "create_time")
+	private Date createtime;
+
+   	@Column(name = "update_time")
+	private Date updatetime;
 
 	/**
 	 * 索引
