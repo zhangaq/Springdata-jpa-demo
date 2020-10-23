@@ -34,7 +34,7 @@ public class IndexController {
     }
 
     //返回index.html页面
-    @GetMapping(value = {"save1","save2"})
+    @GetMapping(value = {"/save1","/save2"})
     public String saveOne(@RequestParam("t1") String t1,@RequestParam("t2") String t2,@RequestParam("t3") String t3){
         TbName t = new TbName();
         t.setT1(t1);
@@ -45,10 +45,10 @@ public class IndexController {
     }
 
     @ResponseBody
-    @GetMapping(value = "query/{id}")
+    @GetMapping(value = "/query/{id}")
     public Object queryById(@PathVariable long id){
         TbName tbName = tbNameRepository.queryById(id);
-        return tbName;
+        return tbName.toString();
 
     }
 
