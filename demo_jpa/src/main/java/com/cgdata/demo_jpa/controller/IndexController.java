@@ -56,7 +56,10 @@ public class IndexController {
 //    @PatchMapping("/update/{id}/{t1}")//部分更新，仅更新提供的字段，请求中缺少的字段仍保持不变。
     @GetMapping("/update/{id}/{t1}")
     public String update(@PathVariable long id, @PathVariable String t1){
-        tbNameRepository.updateT1ById(t1,id);
+        int i = tbNameRepository.updateT1ById(t1, id);
+        if (i<=0){
+            return "update fail";
+        }
         return "update success";
     }
 

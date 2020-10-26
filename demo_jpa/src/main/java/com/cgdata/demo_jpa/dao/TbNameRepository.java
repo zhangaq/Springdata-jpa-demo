@@ -17,7 +17,7 @@ public interface TbNameRepository extends JpaRepository<TbName,Long> {
 
     @Transactional
     @Query(value = " update tb_name set t1 = ?1 where id = ?2 ", nativeQuery = true)
-    @Modifying//
-    void updateT1ById(String t1,long id);
+    @Modifying//@Query 与 @ Modifying 这 两 个 annotation 一起声明，可定义个性化更新操作，例如只涉及某些字段更新时最为常用，
+    int updateT1ById(String t1,long id);
 
 }
