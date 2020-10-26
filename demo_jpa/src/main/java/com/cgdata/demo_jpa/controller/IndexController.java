@@ -34,7 +34,7 @@ public class IndexController {
     }
 
     //返回index.html页面
-    @GetMapping(value = {"save1","save2"})
+    @GetMapping(value = {"/save1","/save2"})
     public String saveOne(@RequestParam("t1") String t1,@RequestParam("t2") String t2,@RequestParam("t3") String t3){
         TbName t = new TbName();
         t.setT1(t1);
@@ -45,11 +45,19 @@ public class IndexController {
     }
 
     @ResponseBody
-    @GetMapping(value = "query/{id}")
+    @GetMapping(value = "/query/{id}")
     public Object queryById(@PathVariable long id){
         TbName tbName = tbNameRepository.queryById(id);
-        return tbName;
+        return tbName.toString();
+    }
 
+    @ResponseBody
+//    @PutMapping("/update/{id}/{t1}")//用来整体更新一个资源，所以请求中必须包含完整的资源信息。如果缺少不分信息，会导致这部分数据被更新为null
+//    @PatchMapping("/update/{id}/{t1}")//部分更新，仅更新提供的字段，请求中缺少的字段仍保持不变。
+    @GetMapping("/update/{id}/{t1}")
+    public String update(@PathVariable long id, @PathVariable String t1){
+        tbNameRepository.updateT1ById(t1,id);
+        return "update success";
     }
 
 
