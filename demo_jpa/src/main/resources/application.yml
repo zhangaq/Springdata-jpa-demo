@@ -1,6 +1,8 @@
 server:
   port: 8086
 spring:
+  application:
+    name: spring-data-jpa
   #通用的数据源配置
   datasource:
     driverClassName: com.mysql.jdbc.Driver
@@ -15,3 +17,10 @@ spring:
     hibernate:
       #配置指明在程序启动的时候要删除并且创建实体类对应的表  使用create会删除表数据  所以使用update
       ddl-auto: update
+  # ============ 自定义swagger配置 ============== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springdatajpa test
+  try-host: http://127.0.0.1:${server.port}
