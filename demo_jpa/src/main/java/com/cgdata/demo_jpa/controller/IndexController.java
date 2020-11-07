@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Calendar;
 
 //@RestController
-@Api(value = "IndexController|首页控制器",description = "首页管理，提供页面的增、删、改、查")
+@Api(value = "IndexController|首页控制器test",description = "首页管理，提供页面的增、删、改、查")
 @Slf4j
 @Controller
 @CrossOrigin//跨域
